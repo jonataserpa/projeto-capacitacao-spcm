@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;webHelloWorld&apos;&#x0D;&#x0A;- Original project: &apos;webHelloWorld&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.spcm.dao.ContatoDAO.java&#x0D;&#x0A;     com.spcm.dao.TelefoneDAO.java" description="Delete elements" element1="/src\/main\/java&lt;com.spcm.dao{ContatoDAO.java" element2="/src\/main\/java&lt;com.spcm.dao{TelefoneDAO.java" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1602616216830" subPackages="false" version="1.0"/>
+</session>

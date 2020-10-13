@@ -1,0 +1,120 @@
+package com.spcm.dao;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.enterprise.inject.Model;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.spcm.Contato;
+
+@Singleton
+@Model
+public class ContatoDAO implements Serializable {
+
+	@Inject
+	protected EntityManager em;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LogManager.getRootLogger();
+	private static final String TAG = "<BaseDAO>";
+
+	public Object persist(Object object) throws Exception {
+		try {
+			em.getTransaction().begin();
+			em.persist(object);
+			em.flush();
+			em.clear();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			logger.error(TAG + e.getMessage());
+			em.getTransaction().rollback();
+			throw e;
+		}
+		return object;
+	}
+
+	public Object merge(Object object) throws Exception {
+		try {
+			em.getTransaction().begin();
+			em.merge(object);
+			em.flush();
+			em.clear();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			logger.error(TAG + e.getMessage());
+			em.getTransaction().rollback();
+			throw e;
+		}
+		return object;
+	}
+
+	public Contato saveContato(Contato contato) throws Exception {
+
+		return (Contato) persist(contato);
+
+	}
+
+	public Contato updateContato(Contato contato) throws Exception {
+
+		return (Contato) merge(contato);
+
+	}
+
+	public List<Contato> getAllContatos() throws Exception {
+
+		List<Contato> listaContatos = new ArrayList<Contato>();
+		try {
+			em.getTransaction().begin();
+
+			TypedQuery<Contato> query = em.createQuery("SELECT c FROM Contato c", Contato.class);
+			listaContatos = query.getResultList();
+
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			throw e;
+		}
+		return listaContatos;
+
+	}
+
+	public void deleteContato(Integer idContact) {
+		try {
+			em.getTransaction().begin();
+			Contato contato = em.find(Contato.class, idContact);
+			em.remove(contato);
+			em.getTransaction().commit();
+		} finally {
+			em.close();
+		}
+	}
+
+	public Contato getFindByIdContato(Integer idContact) {
+
+		Contato contato;
+		try {
+			em.getTransaction().begin();
+			contato = em.find(Contato.class, idContact);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			throw e;
+		} finally {
+			em.close();
+		}
+
+		return contato;
+	}
+
+}

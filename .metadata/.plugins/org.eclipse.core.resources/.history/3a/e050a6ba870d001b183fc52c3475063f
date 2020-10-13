@@ -1,0 +1,93 @@
+package com.spcm.dao;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.enterprise.inject.Model;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import javax.persistence.EntityManager;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.spcm.Operadora;
+import com.spcm.Telefone;
+
+@Singleton
+@Model
+public class TelefoneDAO implements Serializable {
+
+	@Inject
+	protected EntityManager em;
+
+	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LogManager.getRootLogger();
+	private static final String TAG = "<telefoneDAO>";
+
+	public Object persist(Object object) throws Exception {
+		try {
+			em.getTransaction().begin();
+			em.persist(object);
+			em.flush();
+			em.clear();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			logger.error(TAG + e.getMessage());
+			em.getTransaction().rollback();
+			throw e;
+		}
+		return object;
+	}
+
+	public Telefone saveTelefone(Telefone telefone) throws Exception {
+
+		try {
+			persist(telefone);
+
+		} catch (Exception e) {
+			logger.error(TAG + e.getMessage());
+		}
+		return telefone;
+
+	}
+
+	public List<Telefone> getFindByIdTelefoneContato(Integer idContact) {
+
+		List<Object[]> listaObjeto = new ArrayList<Object[]>();
+		List<Telefone> listaTelefone = new ArrayList<Telefone>();
+		try {
+			em.getTransaction().begin();
+			@SuppressWarnings("unchecked")
+			List<Object[]> telefones = em.createNativeQuery(
+					"SELECT * FROM telefone LEFT JOIN operadora ON operadora.id_operadora = telefone.idOperadora where telefone.id_contato = "
+							+ idContact)
+					.getResultList();
+			listaObjeto = telefones;
+
+			for (Object[] tel : listaObjeto) {
+				Telefone telefone = new Telefone();
+				telefone.setIdTelefone((Integer) tel[0]);
+				telefone.setNumero((String) tel[2]);
+				telefone.setTipo((String) tel[6]);
+				Operadora operadora = new Operadora();
+				operadora.setIdOperadora((Integer) tel[5]);
+				operadora.setName((String) tel[9]);
+				telefone.setOperadora(operadora);
+
+				listaTelefone.add(telefone);
+			}
+
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			throw e;
+		} finally {
+			em.close();
+		}
+
+		return listaTelefone;
+	}
+
+}
