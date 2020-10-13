@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/webLogPro/#/login" />
+<title>FornecedorConfiguracaoAddRemove01</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">FornecedorConfiguracaoAddRemove01</td></tr>
+</thead><tbody>
+<tr>
+	<td>click</td>
+	<td>id=idHeaderMenuAdministracao2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idHeaderMenuFornecedoresComp</td>
+	<td></td>
+</tr>
+<!--==================== CNPJ ==========================-->
+<!--Adicionar Fornecedor-->
+<tr>
+	<td>click</td>
+	<td>id=idTipoFornecedorCNPJ</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>Fornecedor Teste Selenium CNPJ 01</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cnpj</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cnpj</td>
+	<td>94.640.778/0001-09</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=observation</td>
+	<td>Teste Selenium</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idBtnAdicionarFornecedor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>* realizado com sucesso.</td>
+</tr>
+<!--Edição Fornecedor-->
+<tr>
+	<td>click</td>
+	<td>id=idEditSupplierFornecedor Teste Selenium CNPJ 01</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=selectedName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=selectedName</td>
+	<td>Fornecedor Teste Selenium CNPJ 01 Editado</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idModalEdicaoSalvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='alert']/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>* realizada com sucesso.</td>
+</tr>
+<!--Remoção de Fornecedor-->
+<tr>
+	<td>click</td>
+	<td>id=idRemoveSupplierFornecedor Teste Selenium CNPJ 01 Editado</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idModalConfirmationSim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='alert']/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>* realizada com sucesso.</td>
+</tr>
+<!--==================== CPF ==========================-->
+<!--Adicionar Fornecedor-->
+<tr>
+	<td>click</td>
+	<td>id=idTipoFornecedorCPF</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>Fornecedor Teste Selenium CPF 01</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cpf</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cpf</td>
+	<td>893.679.334-95</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=observation</td>
+	<td>Teste Selenium</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idBtnAdicionarFornecedor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='alert']/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>* realizado com sucesso.</td>
+</tr>
+<!--Edição Fornecedor-->
+<tr>
+	<td>click</td>
+	<td>id=idEditSupplierFornecedor Teste Selenium CPF 01</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=selectedName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=selectedName</td>
+	<td>Fornecedor Teste Selenium CPF 01 Editado</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='alert']/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>* realizada com sucesso.</td>
+</tr>
+<!--Remoção de Fornecedor-->
+<tr>
+	<td>click</td>
+	<td>id=idRemoveSupplierFornecedor Teste Selenium CPF 01 Editado</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idModalConfirmationSim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='alert']/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>* realizada com sucesso.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

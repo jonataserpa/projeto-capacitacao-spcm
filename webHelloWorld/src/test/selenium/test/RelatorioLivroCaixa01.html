@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/webLogPro/#/login" />
+<title>RelatorioLivroCaixa01</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">RelatorioLivroCaixa01</td></tr>
+</thead><tbody>
+<tr>
+	<td>click</td>
+	<td>id=idHeaderMenuRelatoriosComp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Livro Caixa</td>
+	<td></td>
+</tr>
+<!--Obtem a data final (data de hoje) e uma inicial (de 100 dias atrás)-->
+<tr>
+	<td>storeEval</td>
+	<td>getDateAddFromToday(-100);</td>
+	<td>dateInitial</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${dateInitial}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>getDateToday();</td>
+	<td>dateFinal</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${dateFinal}</td>
+	<td></td>
+</tr>
+<!--Insere os dados do relatório-->
+<tr>
+	<td>type</td>
+	<td>id=cashbookinit</td>
+	<td>${dateInitial}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cashbookfinal</td>
+	<td>${dateFinal}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idLivroCaixaFormatoAnalitico</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cashbookBookNumber</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cashbookPageNumber</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cashbookLastPrintedPage</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idLivroCaixaImprimir</td>
+	<td></td>
+</tr>
+<!--Se aparecer o modal de conformação de impressão ele clica, senão não tem efeito.-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idModalConfirmationSim</td>
+	<td></td>
+</tr>
+<!--Espera um tempo para ver se deu algum erro (aparece uma mensagem de alerta) se não aparecer ele termina com sucesso-->
+<tr>
+	<td>pause</td>
+	<td>7000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//div[@id='alert']/div</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

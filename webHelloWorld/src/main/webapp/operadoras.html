@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html ng-app="listaOperadora" lang="pt-BR">
+<head>
+<title>CRUD -> Lista Operadora</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+	crossorigin="anonymous"></script>
+<link href="./resources/css/custom/dashboard.css" rel="stylesheet">
+<link rel="stylesheet" href="./resources/css/custom/app.css">
+<script src="./resources/js/angular/angularjs-1.8.js"></script>
+<script src="./resources/js/angular/angular-locale_pt-br.js"></script>
+<script src="./resources/js/app.js"></script>
+<script src="./resources/js/modules/listaOperadoraCtrl.js"></script>
+<script src="./resources/js/services/operadorasAPIService.js"></script>
+<script src="./resources/js/config/configOperadora.js"></script>
+<script src="./resources/js/filters/nameFilter.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+
+<body ng-controller="listaOperadoraCtrl">
+	<nav
+		class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+		<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">CRUD</a>
+		<button class="navbar-toggler position-absolute d-md-none collapsed"
+			type="button" data-toggle="collapse" data-target="#sidebarMenu"
+			aria-controls="sidebarMenu" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+	</nav>
+	<div class="container-fluid centro">
+		<div class="row">
+			<nav id="sidebarMenu"
+				class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+				<div class="sidebar-sticky pt-3">
+					<ul class="nav flex-column">
+						<li class="nav-item"><a class="nav-link " href="index.html">
+								<span data-feather="file"></span> Telefônica
+						</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							href="operadoras.html"> <span data-feather="users"></span>
+								Operadoras
+						</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="form-group" ng-click="limparModal()">
+				<button type="button" id="cdr" class="btn button"
+					data-toggle="modal" data-target="#operadoraModal">Cadastrar</button>
+			</div>
+			<div class="form-group">
+				<button type="button" class="btn btn-danger buttonApagar"
+					ng-click="apagarOperadora(operadoras)"
+					ng-if="isOperadoraSelecionada(operadoras)">Apagar
+					Operadora(s)</button>
+			</div>
+
+			<div class="modal fade" id="operadoraModal" tabindex="-1"
+				role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Cadastro
+								Operadora</h5>
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+
+							<form class="form-inline operadoraForm" name="operadoraForm"
+								data-toggle="modal">
+								<div class="form-group">
+									<div class="col-md-3 col-sm-3 col-xs-3">
+										<input class="form-control" type="text"
+											ng-model="operadora.name" name="name" placeholder="Nome"
+											ng-required="true" />
+									</div>
+								</div>
+								&ensp;
+								<div class="form-group">
+									<div class="col-md-3 col-sm-3 col-xs-3">
+										<select class="form-control" ng-model="operadora.category">
+											<option value="">Selecione...</option>
+											<option value="Fixo">Fixo</option>
+											<option value="Celular">Celular</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-3 col-sm-3 col-xs-3">
+										<input class="form-control" type="text"
+											ng-model="operadora.price" name="price" placeholder="Preço"
+											ng-required="true" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-3 col-sm-3 col-xs-3">
+										<input class="form-control" type="text"
+											ng-model="operadora.code" name="code" placeholder="Código"
+											ng-required="true" ng-pattern="/^[0-9]*$/" />
+									</div>
+								</div>
+							</form>
+
+						</div>
+						<div
+							ng-show="operadoraForm.name.$error.required &&operadoraForm.name.$dirty"
+							class="alert alert-danger">Por favor preencha o campo nome!
+						</div>
+						<div ng-show="operadoraForm.name.$error.minlength"
+							class="alert alert-danger">O campo nome deve ter no minimo
+							2 caracteres.</div>
+						<div
+							ng-show="operadoraForm.code.$error.required && operadoraForm.code.$dirty"
+							class="alert alert-danger">Por favor preencha o campo
+							código!</div>
+						<div ng-show="operadoraForm.code.$error.pattern"
+							class="alert alert-danger">O campo código deve ser
+							númerico!</div>
+						<div
+							ng-show="operadoraForm.price.$error.required && operadoraForm.price.$dirty"
+							class="alert alert-danger">Por favor preencha o campo
+							preço!</div>
+						<div ng-show="operadoraForm.price.$error.pattern"
+							class="alert alert-danger">O campo preço deve ser númerico!
+						</div>
+						<div
+							ng-show="operadoraForm.category.$error.required && operadoraForm.category.$dirty"
+							class="alert alert-danger">Por favor selecione a categoria!
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="buttonSalvar"
+								ng-click="adicionarOperadora(operadora)"
+								ng-disabled="operadoraForm.$invalid">Salvar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="jumbotron">
+				<input class="form-control form-control-dark w-50" type="text"
+					ng-model="criterioDeBusca" placeholder="O que você esta buscando?"
+					aria-label="Search">
+
+				<table ng-show="operadoras.length > 0" class="table">
+					<tr>
+						<th style="width: 1%"></th>
+						<th style="width: 30%"><a ng-click="ordenarPor('nome')">Nome</a></th>
+						<th style="width: 20%"><a ng-click="ordenarPor('categoria')">Categoria</a></th>
+						<th style="width: 10%"><a ng-click="ordenarPor('codigo')">Código</a></th>
+						<th style="width: 10%"><a ng-click="ordenarPor('preco')">Preço</a></th>
+						<th style="width: 10%"></th>
+					</tr>
+					<tr ng-class="{'selecionada negrito': operadora.selecionada}"
+						ng-repeat="operadora in operadoras | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao ">
+						<td title="Editar operadora?"><span
+							ng-click="carregarOperadoraEdit(operadora)"
+							title="Editar Contato
+								?" data-feather="edit-3"></span></td>
+						<td>{{operadora.name}}</td>
+						<td>{{operadora.category}}</td>
+						<td>{{operadora.code}}</td>
+						<td>{{operadora.price}}</td>
+						<td title="Deletar operadora?"><span
+							ng-click="apagarOperadora(operadoras, operadora)"
+							title="Excluir Contato
+								?" data-feather="x-circle"></span></td>
+						<td><div style="width: 5px; height: 5px;"
+								ng-style="{'background-color': operadora.cor}"></div></td>
+					</tr>
+					<hr />
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+		aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+
+			<div class="modal-content"></div>
+		</div>
+	</div>
+
+	<div ng-include="'./resources/views/footer.html'"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+</script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="./resources/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+html, body{
+  height: 100%;
+}
+
+/*---------- Background COLORS -----------*/
+.bg-bordo{background-color: #5a0000!important;}
+.bg-borgonha{background-color: #7f0101!important;}
+.bg-carmesim{background-color: #ad0505!important;}
+.bg-cinza{background-color: #999999!important;}
+.bg-czmedio{background-color: #bbbbbb!important;}
+.bg-urucum{background-color: #d52d2d!important;}
+
+/*---------- Elements -----------*/
+.ball{border-radius: 50%; display: inline-block; height: 15px; width: 15px;/*border: 1px solid #000000;box-shadow: inset -10px -10px 10px #660, inset 3px 3px 5px #FFF;*/}
+.ball.blue{background-color: #2929EC;}
+.ball.green{background-color: #3ED43E;}
+.ball.red{background-color: #FB2424;}
+.ball.yellow{background-color: #D8D815;}
+.border-right{border-right: 1px solid #cccccc}
+
+/*----------- Custom Class -------*/
+.bookstatus-notification{min-width: 460px;z-index:1; overflow-x: hidden; overflow-y: auto; max-height:200px;right:auto!important;}
+.bookstatus-notification label{padding: 5px;margin: 0;}
+.bookstatus-notification .bookstatus-detail {margin-left: 5px;}
+.bookstatus-notification .bookstatus-title span{display: table-cell;border-bottom: 1px solid #cccccc;padding: 0;}
+.bookstatus-notification .bookstatus-title span .border-left{border-left: 1px solid #cccccc;}
+.bookstatus-notification .bookstatus-title span .border-right{border-right: 1px solid #cccccc;}
+.bookstatus-notification .bookstatus-title span label{font-family: 'Oswald', sans-serif; display:inline-block; font-size: 16px!important;}
+.bookstatus-notification .bookstatus-title span a{font-size: 20px;top: 5px;}
+.cursor-default{cursor: default;}
+.cursor-pointer{cursor: pointer;}
+.disabled { opacity: 0.5; pointer-events: none;}
+.display-table{display: table!important;}
+.dropdown-menu-left{left:-99%!important;}
+.dropperiodo{left: -150%!important;}
+.esp-logo>img{width: 36%!important;}
+.esp-logo{background: #fff!important; pointer-events:none;border:none!important;}
+.fileUpload {position: relative;overflow: hidden;width: 35%}
+.fileUpload input.upload {position: absolute;top: 0;right: 0;margin: 0;padding: 0;font-size: 20px;cursor: pointer;opacity: 0;filter: alpha(opacity=0);}
+.font-12{font-size: 12px!important;}
+.font-14{font-size: 14px!important;}
+.font-19{font-size: 19px!important;}
+.font-dark-grey{color:#777!important;}
+.font-white{color:#fff!important;}
+.handhover{ cursor: pointer; }
+.image-area{width: 200px; min-height: 115px;padding-bottom: 5px;}
+.image-area-small{height: 100px; max-height: 100px;}
+.image-arrow{font-size: 60px;cursor: pointer;}
+.image-description-small{margin-top: -10px; min-height: 25px;}
+.image-file{font-size:30px;}
+.image-file-small{text-align: center;width: 100%;font-size: 30px!important;top: 20%;}
+.image-item{width: auto; max-width: 300px;}
+.image-item-small{max-width: 130px;max-height: 90px;height: 90px!important;}
+.image-tutorial{width: auto; max-width: 850px;}
+.input-num{text-align: right}
+.iSort{opacity:0.5; font-size: 11px; margin-left: -2px;cursor: pointer;}
+.margin-2{margin:2%;}
+.navbar-bookstatus a{top: 0;}
+.navbar-bookstatus a.dropdown-toggle{color: #5a0000!important;font-size: 30px!important;}
+.navbar-bookstatus span.badge{top: 30px!important;left: 35px!important;position: absolute;z-index: 1;}
+.navbar-brand{padding: 15px 10px!important;}
+.no-padding{padding:0px!important;}
+.no-padding-bottom{padding-bottom:0px!important;}
+.no-padding-top{padding-top:0px!important;}
+.padding-1{padding:1%!important;}
+.padding-2{padding:2%!important;}
+.padding-10{padding:10%!important;}
+.padding-bottom-1{padding-bottom:1%!important;}
+.padding-bottom-2{padding-bottom:2%!important;}
+.padding-bottom-10{padding-bottom:10%!important;}
+.table-icon{padding: 8px 4px!important}
+.table-icon .btn{padding: 6px 6px;}
+.text-right{text-align:right!important;}
+.z-index-0{z-index: 0!important;}
+.z-index-1{z-index: 1!important;}
+.z-index-2{z-index: 2!important;}
+.z-index-3{z-index: 3!important;}
+
+/*------------- ID ---------------*/
+#content{ min-height: 600px}
+#dropdownprimario{min-width: 190px;}
+#img-profile-top{margin:10% 0;}
+#nav-main{margin-bottom:0;}
+#produtosContratados{width:100%; padding: 2px 7px}
+#produtosContratados:hover{background:#fff}
+#search-top{margin: 0.7% 0}
+#search-top #select-search{width: 100px;height: 34px;}
+#uploadFile {width: 65%}
+
+/*---------ALTER BOOTSTRAP------*/
+.calendario-busca-firma{min-width: 160px!important;max-width: 180px!important;}
+.container {padding-right: 0px!important;padding-left: 0px!important;}
+.control-label.recurrence{width:100%}
+.input-group button{position: absolute !important ;margin-left: -1px !important; border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;}
+.input-group.date{width: 100% !important; padding-right: 39px !important;}
+.input-group.date.recurrence{padding-right: 85px!important; display: inherit;}
+.jumbotron{padding-bottom: 45px;}
+.recurrence-button{margin-left: 50px !important;text-align: right;}
+.ui-datepicker{z-index: 9999 !important;}
+
+form .input-group .input-group-btn button, form .btn-group .btn {padding: 7px 5px !important;}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button,input[type=date]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+nav.bg-borgonha ul li a:hover{background:#ad0505;}
+textarea.form-control.header {height:200px!important;}
+
+@media (min-width: 1400px){.container{width: 96%!important;}}
+@media (max-width: 1399px){.container{width: 98%!important;}}
+/* .nav-tabs{margin-bottom: 2%} */
+
+/*--------------ChartJs---------------*/
+ #canvas-holder{width:50%;}
+
+/*---------ALTER siplancontrolm------*/
+/* css para input type file*/
+.btn-file {position: relative; overflow: hidden; cursor: pointer; }
+.btn-file input[type=file] {position: absolute; top: 0; right: 0; min-width: 100%; min-height: 100%; font-size: 100px; text-align: right; 
+	filter: alpha(opacity=0); opacity: 0; outline: none; background: white; cursor: pointer; display: block; width: 300px;}
+/*fim css input type file */	
+.dropdown-menu-left{left:-99%!important;}
+.dropdown-toggle-right{text-align:right!important;display: block; padding: 3px 20px; clear: both; font-weight: 400; line-height: 1.42857143; color: #333; white-space; nowrap; font-size: 14px; list-style: none; }
+.dropdown-toggle-right:after{display:block;content:" ";float:left!important;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 5px 5px 0!important;border-right-color:#cccccc!important;border-left-color:#ffffff!important;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>.dropdown-toggle-right:after{border-right-color:#555!important;}
+.glyphicon.information{font-size: 12px; color: #AD0505 !important; cursor:pointer}
+.glyphicons-circle-question-mark.tutorial{color: #bbbbbb !important;padding: 0;}
+.h1, h1 {color:#ad0505 !important;}
+.h2, h2 {color:#5a0000 !important;}
+.h3, h3 {color:#ad0505 !important;}
+.h4, h4 {color:#5a0000 !important;}
+.h5, h5 {color:#ad0505 !important;}
+/* .modulo {margin-top:50px!important;} */
+.modulo {margin-top: 30px!important; border-top:0;border-bottom: 2px solid #ad0505; margin-bottom: 25px; text-align:center}
+.nav>li>a.left-tab{padding:5px 5px!important;text-align:left;white-space: normal;}
+
+input[type=checkbox], input[type=radio] {margin:5px 0 0!important;}
+/* h1.titulodomodulo {margin:-35px 0 40px 50px !important; font-size: 40px !important;background:#FFF !important;} */
+h1.titulodomodulo {font-size: 32px !important;display:inline-block;padding:0;margin:0;background:#FFF !important;;font-size:56px; margin-bottom: 10px;}
+.rodapespcm{margin-top:0px}

@@ -1,0 +1,60 @@
+.jumbotron {
+	width: 83%;
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 17%;
+}
+
+.table {
+	margin: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-control {
+	margin-bottom: 5px;
+}
+
+.selecionado {
+	background-color: aqua;
+}
+
+.negrito {
+	font-weight: bold;
+}
+
+.button {
+	border: none;
+	color: white;
+	padding: 12px 24px;
+	text-align: left;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 5px 5px 5px 240px;
+	cursor: pointer;
+	margin-right: 0;
+	font-weight: bold;
+	background-color: #4D3647;
+}
+
+.buttonSair {
+	border: none;
+	color: white;
+	padding: 12px 24px;
+	text-align: left;
+	text-decoration: none;
+	font-size: 12px;
+	cursor: pointer;
+	margin-left: 50%;
+	font-weight: bold;
+	background-color: #2F2A2E;
+}
+
+.search {
+	background-color: white;
+}
+
+.filtro {
+	margin: -40px;
+}
+

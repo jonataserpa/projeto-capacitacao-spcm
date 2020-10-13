@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/webLogPro/#/login" />
+<title>LancarReceita01</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LancarReceita01</td></tr>
+</thead><tbody>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Receitas e Despesas')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=idLancarReceita</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idLancarReceita</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=effectuationDate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>var d=new Date(); d.getDate()+'/'+((d.getMonth()+1)) +'/'+d.getFullYear();</td>
+	<td>dateToday</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${dateToday}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=effectuationDate</td>
+	<td>${dateToday}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=specialty</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=specialty</td>
+	<td>label=Protesto de Letras e Títulos</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//option[@value='3']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.glyphicons.glyphicons-list-alt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='modalAccountList']/div/div/div[2]/div/div/ul/li[5]/a/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Averbação de alterações de registros efetuados</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=value</td>
+	<td>30,00</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>id=idModalConfirmationSim</td>
+	<td>modalApareceu</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${modalApareceu}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>${modalApareceu}==false</td>
+	<td>endIf_01</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idModalConfirmationSim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>endIf_01</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

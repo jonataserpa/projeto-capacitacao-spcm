@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/webLogPro/#/login" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ImportarReceita01</td></tr>
+</thead><tbody>
+<tr>
+	<td>click</td>
+	<td>id=idReceitasDespesas2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Importar receitas</td>
+	<td></td>
+</tr>
+<!--Clica no botão "Importar receitas" e preenche os dados da tela.-->
+<tr>
+	<td>click</td>
+	<td>link=Importar receitas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=xmlSource</td>
+	<td>label=SiplanRI</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;I&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=fileUpload</td>
+	<td>C:\SPCM\Testes\Selenium\LCW\Receitas\Importar\LCW_RI_TESTE_02.xml</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btnImport</td>
+	<td></td>
+</tr>
+<!--Captura a mensagem de retorno do "importação do arquivo"-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>mensagemRetorno</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${mensagemRetorno}</td>
+	<td></td>
+</tr>
+<!--Verifica pela "mensagem de retorno" se os dados já haviam sido importados/incluidos.-->
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['mensagemRetorno'].match(/Aparentemente esses dados/);</td>
+	<td>jaForamImportados</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>javascript{storedVars.jaForamImportados}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['jaForamImportados']=='Aparentemente esses dados'</td>
+	<td>jaForamImportados</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>javascript{storedVars.jaForamImportados}</td>
+	<td></td>
+</tr>
+<!--Se os dados já foram importados ele tenta importar (os dados vão ser inseridos novamente, mesmo que duplicados).-->
+<tr>
+	<td>gotoIf</td>
+	<td>${jaForamImportados}</td>
+	<td>IMPORTAR_MESMO_DUPLICADO</td>
+</tr>
+<!--Se a mensagem de retorno não for a de que os dados já haviam sido importados.-->
+<!--E a "mensagem de retorno" for "Sucesso" então ele encerra o teste.-->
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>* com sucesso*</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>true</td>
+	<td>FIM</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>IMPORTAR_MESMO_DUPLICADO</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btnImport</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='alert']/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>mensagemRetorno</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='alert']/div</td>
+	<td>* com sucesso*</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>FIM</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

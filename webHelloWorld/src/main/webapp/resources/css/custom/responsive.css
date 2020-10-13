@@ -1,0 +1,69 @@
+@-ms-viewport {width: device-width;}
+
+@media print{
+    .no-print, .no-print *  {display: none !important;}
+}
+/*------------- Submenu ---------------*/
+
+@media (min-width: 1280px) {
+	.modal-tutorial{width: 1200px}
+}
+
+@media screen and (max-width: 992px) {
+	.dropperiodo{left: 64%!important;margin-top: 5%;}
+}
+
+@media screen and (min-width:866px){
+	button#navbarMobileButton.navbar-toggle{display: none!important;}
+	.collapse.onlymobile{display: none!important;padding: 0;}
+	.collapse.onlymobile.navbar-nav{width: 100%;margin: 0;}
+	.navbar-collapse.collapse{display: block!important;}
+	.navbar-header{display: none!important;}
+}
+
+@media screen and (max-width:865px){
+	button#navbarMobileButton.navbar-toggle{display: block!important;}
+	.bookstatus-notification{width: 100%;min-width: inherit;}
+	.bookstatus-notification li{width: 100%;}
+	.bookstatus-notification .bookstatus-title span{display: inherit;border-top:1px solid #cccccc;}
+	.bookstatus-notification .bookstatus-title span span{font-size: 12px;border-top:0;}
+	.collapse.onlymobile{border-bottom: 1px solid #cccccc;padding: 0;}
+	.image-arrow{font-size: 40px;}
+	.image-item{width: 100%;}
+	.navbar-header{float: right!important;}
+	.navbar-collapse.collapse{display: none!important;}
+	.navbar-bookstatus{display: inline-block;padding:  10px 15px 0px 0px;cursor: pointer;}
+	.navbar-bookstatus span.badge{top: 15px!important; left: 15px!important}
+	.secondary-sub-menu{padding:5px 15px 5px 35px!important;}
+	.terciary-sub-menu{padding:5px 15px 5px 45px!important;}
+}
+
+@media screen and (max-width: 767px) {
+	.bookstatus-notification{width: auto;}
+	.collapse.onlymobile{padding: 0 15px;}
+	.dropperiodo{left: 64%!important;}
+	.open>.dropdown-menu { display: block;z-index: 1050;}
+	.xs-noshow{height:inherit!important;background:inherit!important; background-size:inherit!important;}
+}
+
+@media screen and (min-width:768px){
+	.open>.dropdown-menu { display: block;z-index: 1050;}
+	.dropperiodo{left: 64%!important;}
+	.navbar-nav{float: right!important;}
+}
+
+@media screen and (max-width: 500px){
+	.dropperiodo {left: 39%!important;margin-top: 11%;}
+}
+
+@media screen and (max-width: 400px){
+	.navbar-brand{width: 55%!important;padding: 20px 10px!important;}
+	.navbar-brand img{width: 100%!important;}
+}
+
+@media screen and (max-width: 275px){
+	.navbar-brand{padding: 25px 10px!important;}
+	.navbar-bookstatus a.dropdown-toggle{top: 5px!important; font-size: 25px!important;}
+	.bookstatus-notification{font-size: 12px!important;}
+	.bookstatus-notification .bookstatus-title span label{font-size: 12px!important;}
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<diskStore path="java.io.tmpdir/ehcache" />
+
+	<defaultCache maxEntriesLocalHeap="10000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120"
+		diskSpoolBufferSizeMB="30" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU"
+		statistics="true">
+		<persistence strategy="localTempSwap" />
+	</defaultCache>
+
+
+
+	<cache name="seloDigital" maxEntriesLocalHeap="10000"
+		eternal="false" timeToIdleSeconds="120" timeToLiveSeconds="120"
+		diskSpoolBufferSizeMB="30" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU"
+		statistics="true">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="CRIPTOGRAFIA" maxEntriesLocalHeap="10000"
+		eternal="false" timeToIdleSeconds="120" timeToLiveSeconds="120"
+		diskSpoolBufferSizeMB="30" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU"
+		statistics="true">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="token" 
+		maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="1000000" 
+		eternal="false" 
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="3600"
+		memoryStoreEvictionPolicy="LFU" 
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="cert" 
+		maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="1000000" 
+		eternal="false" 
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="3600"
+		memoryStoreEvictionPolicy="LFU" 
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+</ehcache>

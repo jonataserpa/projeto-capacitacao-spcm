@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/webLogPro/#/login" />
+<title>RelatorioTermoEncerramento01</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">RelatorioTermoEncerramento01</td></tr>
+</thead><tbody>
+<tr>
+	<td>click</td>
+	<td>id=idHeaderMenuRelatoriosComp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Termo de encerramento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=closureTermBookType</td>
+	<td>label=Livro Diário</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=closureTermBookNumber</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=closureTermPageNumber</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=closureTermlastPrintedPageNumber</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=idTermoImprimir</td>
+	<td></td>
+</tr>
+<!--Espera um tempo para ver se deu algum erro (aparece uma mensagem de alerta) se não aparecer ele termina com sucesso-->
+<tr>
+	<td>pause</td>
+	<td>7000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='alertClosureTermBook']/div</td>
+	<td>*pode imprimir o termo de encerramento dos livros se desejar encerrá-los antes do número de páginas configurado.*</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

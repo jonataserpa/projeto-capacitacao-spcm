@@ -1,0 +1,123 @@
+.jumbotron {
+	width: 83%;
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 17%;
+}
+
+.table {
+	margin: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-control {
+	margin-bottom: 5px;
+}
+
+.selecionado {
+	background-color: #ADD8E6;
+}
+
+.selecionada {
+	background-color: #ADD8E6;
+}
+
+.negrito {
+	font-weight: bold;
+}
+
+.button {
+	border: none;
+	color: white;
+	padding: 12px 24px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 5px 5px 5px 240px;
+	cursor: pointer;
+	margin-right: 0;
+	font-weight: bold;
+	background-color: #191970;
+	
+}
+.buttonSalvar{
+	border-radius:5px;
+	border: none;
+	color: white;
+	padding: 10px 25px;
+	text-align: left;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 5px 5px 5px 240px;
+	cursor: pointer;
+	margin-right: 0;
+	font-weight: bold;
+	background-color: #191970;
+}
+
+.buttonSair {
+	border-radius:5px;
+	border: none;
+	color: white;
+	padding: 10px 25px;
+	text-align: left;
+	text-decoration: none;
+	font-size: 12px;
+	cursor: pointer;
+	margin-right: 0;
+	font-weight: bold;
+	background-color: #999999;
+}
+
+.btn-apagar {
+	border: none;
+	text-decoration: none;
+	margin-right: 0;
+	height:0px;
+}
+
+.buttonApagar{
+	border: none;
+	color: white;
+	padding: 12px 24px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 5px 5px 5px 240px;
+	cursor: pointer;
+	margin-right: 0;
+	font-weight: bold;
+	background-color: #FF0000;
+}
+
+.buttonEditar {
+	border-radius:5px;
+	border: none;
+	color: white;
+	padding: 10px 25px;
+	text-align: left;
+	text-decoration: none;
+	font-size: 12px;
+	cursor: pointer;
+	margin-right: 0;
+	font-weight: none;
+	background-color:#191970;
+}
+
+.search {
+	background-color: white;
+}
+
+.filtro {
+	margin: -40px;
+}
+
+.glyphicons-iphone {
+	background-image: glyphicons-164-iphone.png;
+}
+
+.glyphicons{
+	background-color: #191970;
+}
+
