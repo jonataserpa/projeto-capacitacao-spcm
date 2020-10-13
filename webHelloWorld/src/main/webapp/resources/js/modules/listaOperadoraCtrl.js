@@ -6,7 +6,7 @@ angular.module("listaOperadora").controller(
 			operadoraEditar = [];
 
 			/**
-			 * Carrega todas as operadoras cadastradas
+			 * Carrega todas as operadoras cadastradas.
 			 */
 			var carregarOperadoras = function() {
 				operadorasAPI.getOperadoras().then(
