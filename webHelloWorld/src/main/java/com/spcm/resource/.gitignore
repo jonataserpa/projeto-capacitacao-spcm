@@ -1,1 +1,8 @@
 /helper.java
+target
+.project
+.classpath
+.settings
+.metadata
+.tern-project
+nb-configuration.xml
