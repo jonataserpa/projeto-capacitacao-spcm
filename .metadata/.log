@@ -188,3 +188,9 @@ Caused by: org.jboss.ide.eclipse.as.management.core.JBoss7ManangerException: Cou
 ]. Failure was "WFLYCTL0379: System boot is in process; execution of remote management operations is not currently available".
 	at org.jboss.ide.eclipse.as.internal.management.wildfly9.Wildfly9Manager.execute(Wildfly9Manager.java:360)
 	... 13 more
+
+!ENTRY org.eclipse.jface.text 2 0 2020-10-13 16:23:00.877
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2020-10-13 16:23:00.891
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
